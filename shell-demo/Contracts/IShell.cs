@@ -10,7 +10,7 @@ namespace Contracts
 {
     public interface IShell
     {
-        ObservableCollection<ShellMenuItem> MenuItems { get; }
+        IList<ShellMenuItem> MenuItems { get; }
 
         IModule LoadModule(Assembly assembly);
     }

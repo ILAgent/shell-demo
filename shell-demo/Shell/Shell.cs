@@ -11,7 +11,12 @@ namespace Shell
 {
     class Shell: IShell 
     {
-        public ObservableCollection<ShellMenuItem> MenuItems { get; private set; }
+        public Shell()
+        {
+            MenuItems = new ObservableCollection<ShellMenuItem>();
+        }
+
+        public IList<ShellMenuItem> MenuItems { get; private set; }
 
         public IModule LoadModule(Assembly assembly)
         {

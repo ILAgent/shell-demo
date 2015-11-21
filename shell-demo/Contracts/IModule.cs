@@ -8,6 +8,6 @@ namespace Contracts
 {
     public interface IModule
     {
-        void Init(object context = null);
+        void Init();
     }
 }

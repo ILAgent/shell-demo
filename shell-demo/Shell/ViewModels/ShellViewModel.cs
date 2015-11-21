@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shell.ViewModels
 {
-    class MainWindowViewModel
+    class ShellViewModel
     {
     }
 }
