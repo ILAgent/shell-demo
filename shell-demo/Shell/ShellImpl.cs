@@ -9,9 +9,9 @@ using Contracts;
 
 namespace Shell
 {
-    class Shell: IShell 
+    class ShellImpl: IShell 
     {
-        public Shell()
+        public ShellImpl()
         {
             MenuItems = new ObservableCollection<ShellMenuItem>();
         }
