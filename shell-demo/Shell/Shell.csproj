@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="ShellImpl.cs" />
     <Compile Include="ShellBootstrapper.cs" />
+    <Compile Include="ShellInstaller.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\ShellView.xaml.cs" />
   </ItemGroup>
