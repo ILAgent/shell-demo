@@ -16,6 +16,7 @@ namespace Module
         {
             container
                 .Register(Component.For<FirstViewModel>())
+                .Register(Component.For<SecondViewModel>())
                 .Register(Component.For<IModule>().ImplementedBy<ModuleImpl>());
         }
     }
