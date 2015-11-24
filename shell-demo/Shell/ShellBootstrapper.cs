@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Caliburn.Micro;
+using Castle.Core.Internal;
 using Castle.Windsor;
 using Shell.ViewModels;
 
@@ -21,6 +24,18 @@ namespace Shell
 
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
+            var loader = _container.Resolve<ModuleLoader>();
+
+            var exeDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            var pattern = "*.dll";
+
+            Directory
+                .GetFiles(exeDir, pattern)
+                .Select(Assembly.LoadFrom)
+                .Select(loader.LoadModule)
+                .Where(module => module != null)
+                .ForEach(module => module.Init());
+
             DisplayRootViewFor<ShellViewModel>();
         }
 

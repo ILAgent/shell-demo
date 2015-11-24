@@ -6,21 +6,26 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Contracts;
+using Shell.ViewModels;
 
 namespace Shell
 {
     class ShellImpl: IShell 
     {
-        public ShellImpl()
+        private readonly ModuleLoader _loader;
+        private readonly ShellViewModel _shellViewModel;
+
+        public ShellImpl(ModuleLoader loader, ShellViewModel shellViewModel)
         {
-            MenuItems = new ObservableCollection<ShellMenuItem>();
+            _loader = loader;
+            _shellViewModel = shellViewModel;
         }
 
-        public IList<ShellMenuItem> MenuItems { get; private set; }
+        public IList<ShellMenuItem> MenuItems { get { return _shellViewModel.MenuItems; } }
 
         public IModule LoadModule(Assembly assembly)
         {
-            throw new NotImplementedException();
+            return _loader.LoadModule(assembly);
         }
     }
 }
