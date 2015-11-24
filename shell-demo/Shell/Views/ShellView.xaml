@@ -8,7 +8,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         
-        <ListBox x:Name="Menu" Grid.Column="0"/>
+        <ListBox x:Name="MenuItems" DisplayMemberPath="Caption" Grid.Column="0"/>
         
         <ContentControl x:Name="CurrentView" Grid.Column="1"/>
 
