@@ -9,6 +9,8 @@
         </Grid.ColumnDefinitions>
         
         <ListBox x:Name="Menu" Grid.Column="0"/>
+        
+        <ContentControl x:Name="CurrentView" Grid.Column="1"/>
 
     </Grid>
 </Window>
